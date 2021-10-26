@@ -8,11 +8,7 @@ function App() {
       <Router>
         <Navbar />
           <Switch>
-                  <Route path='/kek'>
-                      KEK
-                  </Route>
                   <Route path='/'>
-                      HOME
                   </Route>
             </Switch>
       </Router>
