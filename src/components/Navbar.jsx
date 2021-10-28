@@ -1,23 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import FontDownloadIcon from "@mui/icons-material/FontDownload";
+//import { Button } from "@mui/material";
+import { Button } from './Button';
+import './Navbar.css';
 
 function Navbar() {
   const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
+
   const handleClick = () => setClick(!click);
   const closeMobileMebu = () => setClick(false);
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false)
+    } else {
+      setButton(true)
+    }
+  }
+
+  useEffect(() => {
+    showButton(); 
+  }, [])
+
+  window.addEventListener('resize', showButton)
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
-            АНДАЛИР <FontDownloadIcon></FontDownloadIcon>
+          <Link to="/" className="navbar-logo" onClick={closeMobileMebu}>
+            АНДАЛИР <FontDownloadIcon className="logoIcon"></FontDownloadIcon>
           </Link>
           <div className="menu-icon" onClick={handleClick}>
-            {click ? <CloseIcon /> : <MenuIcon />}
+            {click ? <CloseIcon className="closeIcon" /> : <MenuIcon className="menuIcon" />}
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
@@ -36,7 +55,7 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <Link
-                to="/aboutus"
+                to="/about"
                 className="nav-links"
                 onClick={closeMobileMebu}
               >
@@ -53,6 +72,7 @@ function Navbar() {
               </Link>
             </li>
           </ul>
+          {button && <Button buttonStyle='btn--outline'>Войти</Button>}
         </div>
       </nav>
     </>
