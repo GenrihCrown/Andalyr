@@ -15,6 +15,32 @@ function Cards() {
             label="Важное"
             path="/news"
             />
+            <CardItem 
+            src="images/img2.jpg"
+            text="Обновлен раздел Вселенная"
+            label="Вселенная"
+            path="/news"
+            />
+          </ul>
+          <ul className="cards-items">
+            <CardItem 
+            src="images/img1.jpg"
+            text="Встречайте обновленный сайт!"
+            label="Важное"
+            path="/news"
+            />
+            <CardItem 
+            src="images/img2.jpg"
+            text="Обновлен раздел Вселенная"
+            label="Вселенная"
+            path="/news"
+            />
+            <CardItem 
+            src="images/img2.jpg"
+            text="Обновлен раздел Вселенная"
+            label="Вселенная"
+            path="/news"
+            />
           </ul>
         </div>
       </div>
