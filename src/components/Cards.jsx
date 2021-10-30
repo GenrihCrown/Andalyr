@@ -1,46 +1,25 @@
 import React from "react";
-import CardItem from "./CardItem";
+import { News } from "../news";
+import CardItem from "./CardItem.tsx";
 import "./Cards.css";
 
 function Cards() {
+  const [firstLine, secondLine] = [News.slice(0, 2), News.slice(2)];
+
   return (
     <div className="cards">
       <h1>Новости</h1>
       <div className="cards-container">
         <div className="cards-wrapper">
           <ul className="cards-items">
-            <CardItem 
-            src="images/img1.jpg"
-            text="Встречайте обновленный сайт!"
-            label="Важное"
-            path="/news"
-            />
-            <CardItem 
-            src="images/img2.jpg"
-            text="Обновлен раздел Вселенная"
-            label="Вселенная"
-            path="/news"
-            />
+            {firstLine.map((n) => (
+              <CardItem key={n.id} {...n} />
+            ))}
           </ul>
           <ul className="cards-items">
-            <CardItem 
-            src="images/img1.jpg"
-            text="Встречайте обновленный сайт!"
-            label="Важное"
-            path="/news"
-            />
-            <CardItem 
-            src="images/img2.jpg"
-            text="Обновлен раздел Вселенная"
-            label="Вселенная"
-            path="/news"
-            />
-            <CardItem 
-            src="images/img2.jpg"
-            text="Обновлен раздел Вселенная"
-            label="Вселенная"
-            path="/news"
-            />
+            {secondLine.map((n) => (
+              <CardItem key={n.id} {...n} />
+            ))}
           </ul>
         </div>
       </div>
