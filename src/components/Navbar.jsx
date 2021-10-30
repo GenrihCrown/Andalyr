@@ -1,11 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import FontDownloadIcon from "@mui/icons-material/FontDownload";
-//import { Button } from "@mui/material";
-import { Button } from './Button';
+import {
+  MenuOutlined,
+  CloseOutlined
+} from '@ant-design/icons';
 import './Navbar.css';
+import { Dropdown, Menu, Button as AntdButton } from "antd";
+import { Button } from "./Button";
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <AntdButton type="primary">
+        <Link
+          to="/about"
+        >
+          О насdlkasjdklasldjaslkdjaslkjd jasklds
+        </Link>
+      </AntdButton>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
+        2nd menu item
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
+        3rd menu item
+      </a>
+    </Menu.Item>
+  </Menu>
+);
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -23,20 +48,21 @@ function Navbar() {
   }
 
   useEffect(() => {
-    showButton(); 
+    showButton();
   }, [])
 
   window.addEventListener('resize', showButton)
+
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMebu}>
-            АНДАЛИР <FontDownloadIcon className="logoIcon"></FontDownloadIcon>
+            АНДАЛИР
           </Link>
           <div className="menu-icon" onClick={handleClick}>
-            {click ? <CloseIcon className="closeIcon" /> : <MenuIcon className="menuIcon" />}
+            {click ? <CloseOutlined className="closeIcon" /> : <MenuOutlined className="menuIcon" />}
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
@@ -45,13 +71,15 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-                to="/universe"
-                className="nav-links"
-                onClick={closeMobileMebu}
-              >
-                Вселенная
-              </Link>
+              <Dropdown placement="bottomCenter" overlay={menu} trigger={['hover']}>
+                <Link
+                  to="/universe"
+                  className="nav-links"
+                  onClick={closeMobileMebu}
+                >
+                  Вселенная
+                </Link>
+              </Dropdown>
             </li>
             <li className="nav-item">
               <Link
