@@ -75,6 +75,14 @@
     color: #fff;
   }
 
+  .menu-item-bestiary {
+    color: rgb(181, 181, 181);
+  }
+
+  .menu-item-map {
+    color: rgb(181, 181, 181);
+  }
+
   @media screen and (max-width: 960px) {
     .NavbarItems {
       position: relative;

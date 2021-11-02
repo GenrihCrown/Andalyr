@@ -11,23 +11,20 @@ import { Button } from "./Button";
 const menu = (
   <Menu>
     <Menu.Item>
-      <AntdButton type="primary">
-        <Link
-          to="/about"
-        >
-          О насdlkasjdklasldjaslkdjaslkjd jasklds
-        </Link>
-      </AntdButton>
-    </Menu.Item>
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-        2nd menu item
+      <a target="" rel="noopener noreferrer" href="/chapters">
+        Главы
       </a>
     </Menu.Item>
     <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-        3rd menu item
+      <a target="" rel="noopener noreferrer" href="/articles">
+        Статьи
       </a>
+    </Menu.Item>
+    <Menu.Item className="menu-item-map">
+        Карта
+    </Menu.Item>
+    <Menu.Item className="menu-item-bestiary">
+        Бестиарий
     </Menu.Item>
   </Menu>
 );
@@ -73,7 +70,7 @@ function Navbar() {
             <li className="nav-item">
               <Dropdown placement="bottomCenter" overlay={menu} trigger={['hover']}>
                 <Link
-                  to="/universe"
+                  to="/universe" 
                   className="nav-links"
                   onClick={closeMobileMebu}
                 >
