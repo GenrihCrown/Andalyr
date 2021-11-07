@@ -1,18 +1,14 @@
-@import 'antd/dist/antd.css';
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
 
-
-a:hover{
+a:hover {
   color: white;
 }
 
 ul {
   margin: 0;
 }
-

@@ -1,8 +1,7 @@
-import React from "react";
-import { Button } from "../Button/Button";
-import "./Footer.css";
-import { Link } from "react-router-dom";
-import { InstagramOutlined, TwitterOutlined } from "@ant-design/icons";
+import React from 'react';
+import { Button } from '../Button/Button';
+import './Footer.css';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -38,7 +37,7 @@ function Footer() {
               targer="_blank"
               aria-label="Instagram"
             >
-              <InstagramOutlined />
+              {/* <InstagramOutlined /> */}
             </Link>
             <Link
               to="/"
@@ -46,7 +45,7 @@ function Footer() {
               targer="_blank"
               aria-label="Instagram"
             >
-              <TwitterOutlined />
+              {/* <TwitterOutlined /> */}
             </Link>
           </div>
         </div>
