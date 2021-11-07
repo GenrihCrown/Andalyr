@@ -6,7 +6,7 @@ import {
 } from '@ant-design/icons';
 import './Navbar.css';
 import { Dropdown, Menu, Button as AntdButton } from "antd";
-import { Button } from "./Button";
+import { Button } from "../Button/Button";
 
 const menu = (
   <Menu>
@@ -56,7 +56,8 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMebu}>
-            АНДАЛИР
+            {/* <img src="/src/Background.png" alt="" /> */}
+            Андалир
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             {click ? <CloseOutlined className="closeIcon" /> : <MenuOutlined className="menuIcon" />}

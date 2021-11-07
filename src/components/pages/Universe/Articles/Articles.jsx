@@ -1,7 +1,7 @@
 import React from "react";
-import "./Chapters.css";
+import "../Chapters/Chapters";
 import { Layout, Menu } from "antd";
-import Footer from "../../Footer"
+import Footer from "../../../Footer/Footer"
 
 const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
