@@ -1,10 +1,9 @@
-import React from "react";
-import { News } from "../news";
-import CardItem from "./CardItem.tsx";
-import "./Cards.css";
+import { News as NEWS } from '../../../news';
+import NewsItem from './NewsItem';
+import './News.css'
 
-function Cards() {
-  const [firstLine, secondLine] = [News.slice(0, 2), News.slice(2)];
+export default function News() {
+  const [firstLine, secondLine] = [NEWS.slice(0, 2), NEWS.slice(2)];
 
   return (
     <div className="cards">
@@ -13,12 +12,12 @@ function Cards() {
         <div className="cards-wrapper">
           <ul className="cards-items">
             {firstLine.map((n) => (
-              <CardItem key={n.id} {...n} />
+              <NewsItem key={n.id} {...n} />
             ))}
           </ul>
           <ul className="cards-items">
             {secondLine.map((n) => (
-              <CardItem key={n.id} {...n} />
+              <NewsItem key={n.id} {...n} />
             ))}
           </ul>
         </div>
@@ -26,5 +25,3 @@ function Cards() {
     </div>
   );
 }
-
-export default Cards;
