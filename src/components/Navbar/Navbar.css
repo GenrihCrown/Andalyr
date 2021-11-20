@@ -63,7 +63,20 @@
 }
 
 .nav-links:hover {
-  border-bottom: 4px solid #242424;
+  color: grey;
+  border-bottom: 4px solid grey;
+  transition: all 0.2s ease-out;
+}
+
+.nav-links-hover {
+  color: #242424;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  color: grey;
+  border-bottom: 4px solid grey;
   transition: all 0.2s ease-out;
 }
 
@@ -90,6 +103,10 @@
 
 .menu-item-map {
   color: rgb(181, 181, 181);
+}
+
+.navbar-logo:hover {
+  color: grey;
 }
 
 @media screen and (max-width: 960px) {
@@ -148,7 +165,7 @@
     cursor: pointer;
   }
 
-  .nav-links-mobile {
+  /* .nav-links-mobile {
     display: block;
     text-align: center;
     margin: 2rem auto;
@@ -167,7 +184,7 @@
     background: #fff;
     color: #242424;
     transition: 250ms;
-  }
+  } */
 
   .closeIcon {
     color: #fff;
